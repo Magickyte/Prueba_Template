@@ -150,11 +150,7 @@
               <a href="#orders" class="small-box-footer" data-toggle="collapse">More info <i class="fas fa-chevron-down"></i></a>
             </div>
 			<div class="small-box collapse" id="orders">
-				<ul><li th:each="order: ${ordenes}" th:text="${order.folio}"></li></ul>
-				
-				
-				
-				
+				<ul><li th:each="order: ${ordenes}" th:text="'Folio no. '+ ${order.folio}"></li></ul>
 			</div>
           </div>
           <!-- ./col -->
@@ -162,15 +158,18 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3 th:text="${porcentajes.size()}"> <sup style="font-size: 20px"></sup>Porcentajes registrados</h3>
 
-                <p>Bounce Rate</p>
+                <p>Bounce Rate (%)</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-chevron-down"></i></a>
-            </div>
+			  <a href="#porcentajes" class="small-box-footer" data-toggle="collapse">More info <i class="fas fa-chevron-down"></i></a>
+			   </div>
+			  	<div class="small-box collapse" id="porcentajes">
+			  	<ul><li th:each="porc,iter: ${porcentajes}" th:text="'Taza de Rebote no.' + ${iter.index + 1} +': '+ ${porc.porcentaje} + '%'"></li></ul>
+			  </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
