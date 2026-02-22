@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.fing.app.models.Bounce;
 import com.fing.app.models.Orden;
 import com.fing.app.models.User;
+import com.fing.app.models.Visitor;
 
 @Controller
 public class MainCtrl {
@@ -46,13 +47,30 @@ public class MainCtrl {
 		lista3.add(new User("Camila","Rivera"));
 		lista3.add(new User("Angel","Rodriguez"));
 		
+		ArrayList<Visitor> lista4 = new ArrayList<>();
+		lista4.add(new Visitor("Fernanda",2));
+		lista4.add(new Visitor("Jose",3));
+		lista4.add(new Visitor("Alejandro",15));
+		lista4.add(new Visitor("Ricardo",4));
+		lista4.add(new Visitor("Ian",17));
+		lista4.add(new Visitor("Ivan",20));
+		lista4.add(new Visitor("Valeria",55));
+		lista4.add(new Visitor("Isabella",100));
+		lista4.add(new Visitor("Sofia",5));
+		lista4.add(new Visitor("Laura",25));
+		lista4.add(new Visitor("Pepe",1));
+		
+		
+		
 		model.addAttribute("ordenes",lista);
 		
 		model.addAttribute("porcentajes", lista2);
 		
 		model.addAttribute("usuarios", lista3);
 		
-		 model.addAttribute("msg", "Hola");
+		model.addAttribute("visitors", lista4);
+		
+		model.addAttribute("msg", "Hola");
 		 
 		
 		 return "index";
