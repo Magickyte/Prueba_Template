@@ -19,9 +19,11 @@ public class MainCtrl {
 		
 		
 		ArrayList<Orden> lista = new ArrayList<>();
-		lista.add(new Orden());	
-		lista.add(new Orden());	
-		lista.add(new Orden());	
+		lista.add(new Orden(10234));	
+		lista.add(new Orden(10433));	
+		lista.add(new Orden(10349));
+		lista.add(new Orden(9999));	
+		lista.add(new Orden(1121));	
 		
 		model.addAttribute("ordenes",lista);
 		 model.addAttribute("msg", "Hola");

@@ -12,6 +12,10 @@ public class Orden {
 		this.folio = folio;
 	}
 	
+	public Orden(int folio) {
+		this.folio = folio;
+	}
+	
 	
 	
 	
