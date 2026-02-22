@@ -176,14 +176,17 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3 th:text="${usuarios.size()}"></h3>
                 <p>User Registrations</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-chevron-down"></i></a>
-            </div>
+			  <a href="#registrados" class="small-box-footer" data-toggle="collapse">More info <i class="fas fa-chevron-down"></i></a>
+  			   </div>
+  			  	<div class="small-box collapse" id="registrados">
+  			  	<ul><li th:each="usuario,iter: ${usuarios}" th:text="'User registrado ' + ${iter.index + 1} +': '+ ${usuario.nombre} +' '+ ${usuario.apellido}"></li></ul>
+  			  </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
